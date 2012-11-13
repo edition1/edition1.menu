@@ -1,0 +1,21 @@
+<tal:master define="level options/level | python:0;
+                    children options/children | nothing"
+            i18n:domain="plone">
+  <tal:node repeat="node children">
+    <li tal:attributes="class python:'item-level-%d' % level"
+        tal:define="node_children node/children">
+      <a href=""
+         tal:attributes="href node/url;
+                         title node/description">
+
+        <span tal:replace="node/title">Link</span>
+        <span tal:condition="node_children">&gt;</span>
+      </a>
+      <ul tal:define="next_level python: level + 1"
+          tal:attributes="class python:'menu-level-%d' % next_level"
+          tal:condition="node_children">
+        <span tal:replace="structure python:view.recurse(level=next_level, children=node_children)" />
+      </ul>
+    </li>
+  </tal:node>
+</tal:master>

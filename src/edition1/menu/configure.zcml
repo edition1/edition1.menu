@@ -7,6 +7,8 @@
 
   <five:registerPackage package="." initialize=".initialize" />
 
+  <include package=".viewlets" />
+
   <genericsetup:registerProfile
       name="default"
       title="edition1.menu"
@@ -14,6 +16,5 @@
       description="Installs the edition1.menu package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  <!-- -*- extra stuff goes here -*- -->
-  
+
 </configure>

@@ -1,0 +1,24 @@
+<tal:sections tal:condition="view/available"
+              i18n:domain="plone">
+  <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
+  <div>
+    <span class="tabtitle">Menu</span>
+    <ul tal:define="selected_tab view/selected_portal_tab">
+      <tal:item repeat="node view/menu_items">
+        <li class="item-level-1"
+            tal:define="node_children node/children">
+          <a href=""
+             tal:attributes="href node/url;
+                             title node/description">
+            <span tal:replace="node/title">Link</span>
+            <span tal:condition="node_children">&gt;</span>
+          </a>
+          <ul tal:condition="node_children"
+              class="menu-level-2">
+            <span tal:replace="structure python:view.recurse(level=2, children=node_children)" />
+          </ul>
+        </li>
+      </tal:item>
+    </ul>
+  </div>
+</tal:sections>
