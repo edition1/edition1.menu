@@ -1,4 +1,6 @@
-# -*- extra stuff goes here -*-
+from zope.i18nmessageid import MessageFactory
+
+Edition1MenuMessageFactory = MessageFactory('edition1.menu')
 
 
 def initialize(context):

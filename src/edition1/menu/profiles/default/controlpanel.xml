@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<object name="portal_controlpanel"
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        i18n:domain="edition1.menu"
+        purge="False">
+
+  <configlet title="Menu settings"
+             action_id="MenuSettings"
+             appId="edition1.menu"
+             category="Products"
+             condition_expr=""
+             icon_expr="string:${portal_url}/++resource++edition1.menu/icon.png"
+             url_expr="string:${portal_url}/@@menu-settings"
+             visible="True">
+    <permission>Menu: Change settings</permission>
+  </configlet>
+
+</object>

@@ -6,7 +6,10 @@
     i18n_domain="edition1.menu">
 
   <five:registerPackage package="." initialize=".initialize" />
+  <include package="plone.app.registry" />
 
+  <include file="permissions.zcml" />
+  <include package=".browser" />
   <include package=".viewlets" />
 
   <genericsetup:registerProfile

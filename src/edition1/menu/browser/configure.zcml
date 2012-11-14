@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="edition1.menu">
+
+  <browser:resourceDirectory
+      name="edition1.menu"
+      directory="resources"
+      />
+
+  <!-- Control panel -->
+  <browser:page
+      name="menu-settings"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.MenuSettingsControlPanel"
+      permission="edition1.menu.MenuSettings"
+      />
+
+</configure>

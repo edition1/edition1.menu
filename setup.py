@@ -41,6 +41,7 @@ setup(name='edition1.menu',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'plone.app.registry',
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""

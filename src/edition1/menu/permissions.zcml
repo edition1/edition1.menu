@@ -1,0 +1,11 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="edition1.menu">
+
+    <permission
+        id="edition1.menu.MenuSettings"
+        title="Menu: Change settings"
+        />
+
+</configure>

@@ -6,7 +6,10 @@ from Products.CMFPlone.browser.navigation import get_id
 from Products.CMFPlone.browser.navigation import get_view_url
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.layout.viewlets.common import GlobalSectionsViewlet
-from zope.component import getMultiAdapter
+from plone.registry.interfaces import IRegistry
+from zope.component import getMultiAdapter, getUtility
+
+from edition1.menu.interfaces import IMenuSettings
 
 
 MAX_CHILD_LEVEL = 2  # Will be dynamic in The Near Future(TM).
@@ -157,3 +160,9 @@ class MenuViewlet(GlobalSectionsViewlet):
         self.selected_portal_tab = self.selected_tabs['portal']
 
     recurse = ViewPageTemplateFile('menu_recurse.pt')
+
+    def get_min_size(self):
+        """Return the minimal size (in px) for the wide version of the menu."""
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(IMenuSettings)
+        return settings.edition1_menu_min_width

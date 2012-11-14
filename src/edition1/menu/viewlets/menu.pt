@@ -1,7 +1,8 @@
 <tal:sections tal:condition="view/available"
               i18n:domain="plone">
   <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
-  <div>
+  <div id="responsive-menu"
+       tal:attributes="data-min-width view/get_min_size">
     <span class="tabtitle">Menu</span>
     <ul tal:define="selected_tab view/selected_portal_tab">
       <tal:item repeat="node view/menu_items">
