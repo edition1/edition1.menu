@@ -12,9 +12,6 @@ from zope.component import getMultiAdapter, getUtility
 from edition1.menu.interfaces import IMenuSettings
 
 
-MAX_CHILD_LEVEL = 2  # Will be dynamic in The Near Future(TM).
-
-
 class MenuItems(CatalogNavigationTabs):
     """A custom version of the Navigation tabs.
 
@@ -66,9 +63,16 @@ class MenuItems(CatalogNavigationTabs):
 
         return query
 
+    def get_navigation_depth(self):
+        """Return level of children to show to show."""
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(IMenuSettings)
+        return settings.edition1_menu_navigation_depth
+
     def get_children(self, item, member, level):
         """Return the children as a list of dictionaries."""
-        if MAX_CHILD_LEVEL and level > MAX_CHILD_LEVEL:
+        navigation_depth = self.get_navigation_depth()
+        if navigation_depth and level > navigation_depth:
             # We're already requesting more children than allowed.
             return []
         query = self._get_children_query(item)
@@ -81,7 +85,7 @@ class MenuItems(CatalogNavigationTabs):
                 id, child_url = (self._get_link_url(child, member) or
                                  get_view_url(child))
                 children = []
-                if (not MAX_CHILD_LEVEL or level < MAX_CHILD_LEVEL):
+                if (not navigation_depth or level < navigation_depth):
                     obj = child.getObject()
                     children = self.get_children(obj, member, level + 1)
                 data = {'title': utils.pretty_title_or_id(self.context, child),

@@ -1,3 +1,4 @@
+from plone.app.portlets import PloneMessageFactory as PMF
 from zope import schema
 from zope.interface import Interface
 
@@ -17,3 +18,14 @@ class IMenuSettings(Interface):
                               u'sure the wide menu is always shown.'),
         default=0,
         required=True,)
+
+    edition1_menu_navigation_depth = schema.Int(
+        title=PMF(u"label_navigation_tree_depth",
+                default=u"Navigation tree depth"),
+        description=PMF(u"help_navigation_tree_depth",
+                      default=u"How many folders should be included "
+                      "before the navigation tree stops. 0 "
+                      "means no limit. 1 only includes the "
+                      "root folder."),
+        default=0,
+        required=False)
