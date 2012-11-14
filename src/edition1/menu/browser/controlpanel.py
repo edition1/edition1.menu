@@ -7,8 +7,7 @@ from edition1.menu.interfaces import IMenuSettings
 class MenuSettingsEditForm(controlpanel.RegistryEditForm):
 
     schema = IMenuSettings
-    label = _(u'label_menu_settings',
-              default=u'Menu settings')
+    label = _(u'Menu settings')
     description = _(u'help_menu_settings',
                     default=u'Configuration for the responsive menu.')
 

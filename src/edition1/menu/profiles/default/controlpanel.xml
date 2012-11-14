@@ -11,7 +11,8 @@
              condition_expr=""
              icon_expr="string:${portal_url}/++resource++edition1.menu/icon.png"
              url_expr="string:${portal_url}/@@menu-settings"
-             visible="True">
+             visible="True"
+             i18n:attributes="title">
     <permission>Menu: Change settings</permission>
   </configlet>
 
