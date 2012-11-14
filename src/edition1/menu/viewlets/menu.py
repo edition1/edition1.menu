@@ -80,19 +80,29 @@ class MenuItems(CatalogNavigationTabs):
         rawresult = self.portal_catalog.searchResults(query)
         result = []
         idsNotToList = self.navtree_properties.getProperty('idsNotToList', ())
+        current_path = '/'.join(self.context.getPhysicalPath())
         for child in rawresult:
             if not (child.getId in idsNotToList or child.exclude_from_nav):
                 id, child_url = (self._get_link_url(child, member) or
                                  get_view_url(child))
                 children = []
+                obj = child.getObject()
                 if (not navigation_depth or level < navigation_depth):
-                    obj = child.getObject()
                     children = self.get_children(obj, member, level + 1)
+                obj_path = '/'.join(obj.getPhysicalPath())
+                is_current = is_parent = False
+                if obj_path == current_path:
+                    is_current = True
+                elif (current_path.startswith(obj_path + '/') and
+                      len(current_path) > len(obj_path)):
+                    is_parent = True
                 data = {'title': utils.pretty_title_or_id(self.context, child),
                         'id': child.getId,
                         'url': child_url,
                         'description': child.Description,
-                        'children': children}
+                        'children': children,
+                        'is_current': is_current,
+                        'is_parent': is_parent}
                 result.append(data)
         return result
 
@@ -132,19 +142,27 @@ class MenuItems(CatalogNavigationTabs):
 
         # now add the content to results
         idsNotToList = self.navtree_properties.getProperty('idsNotToList', ())
+        current_path = '/'.join(self.context.getPhysicalPath())
         for item in rawresult:
             if not (item.getId in idsNotToList or item.exclude_from_nav):
                 obj = item.getObject()
                 children = self.get_children(obj, member, 2)
                 id, item_url = (self._get_link_url(item, member) or
                                 get_view_url(item))
-
+                obj_path = '/'.join(obj.getPhysicalPath())
+                is_current = is_parent = False
+                if obj_path == current_path:
+                    is_current = True
+                elif (current_path.startswith(obj_path + '/') and
+                      len(current_path) > len(obj_path)):
+                    is_parent = True
                 data = {'title': utils.pretty_title_or_id(context, item),
                         'id': item.getId,
                         'url': item_url,
                         'description': item.Description,
                         'children': children,
-                        }
+                        'is_current': is_current,
+                        'is_parent': is_parent}
                 result.append(data)
         return result
 

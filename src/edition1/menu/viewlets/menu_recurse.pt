@@ -6,8 +6,8 @@
         tal:define="node_children node/children">
       <a href=""
          tal:attributes="href node/url;
-                         title node/description">
-
+                         title node/description;
+                         class python: (node.get('is_current') and 'current') or (node.get('is_parent') and 'parent') or '';">
         <span tal:replace="node/title">Link</span>
         <span tal:condition="node_children">&gt;</span>
       </a>
