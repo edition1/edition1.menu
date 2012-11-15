@@ -1,8 +1,8 @@
 Changelog
 =========
 
-0.1-dev (unreleased)
---------------------
+0.1a1 (2012-11-15)
+------------------
 
 - Package created using templer
   [markvl]
