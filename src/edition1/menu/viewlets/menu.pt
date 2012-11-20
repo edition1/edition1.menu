@@ -4,23 +4,8 @@
   <div id="responsive-menu"
        tal:attributes="data-min-width view/get_min_size">
     <span class="tabtitle">Menu</span>
-    <ul tal:define="selected_tab view/selected_portal_tab">
-      <tal:item repeat="node view/menu_items">
-        <li class="item-level-1"
-            tal:define="node_children node/children">
-          <a href=""
-             tal:attributes="href node/url;
-                             title node/description;
-                             class python: (node.get('is_current') and 'current') or (node.get('is_parent') and 'parent') or '';">
-            <span tal:replace="node/title">Link</span>
-            <span tal:condition="node_children">&gt;</span>
-          </a>
-          <ul tal:condition="node_children"
-              class="menu-level-2">
-            <span tal:replace="structure python:view.recurse(level=2, children=node_children)" />
-          </ul>
-        </li>
-      </tal:item>
-    </ul>
+    <span tal:define="menu_items view/menu_items"
+          tal:condition="menu_items"
+          tal:replace="structure python:view.recurse(level=1, children=menu_items)" />
   </div>
 </tal:sections>
