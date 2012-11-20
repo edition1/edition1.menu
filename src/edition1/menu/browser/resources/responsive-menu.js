@@ -8,5 +8,5 @@ jq(document).ready(function() {
     if (jq(window).width() >= min_width) {
         menu_type = 'big-menu';
     }
-    jq('#responsive-menu > ul').addClass(menu_type);
+    jq('#responsive-menu').addClass(menu_type);
 });
