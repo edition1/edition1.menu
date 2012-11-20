@@ -4,6 +4,10 @@ Changelog
 0.1a2 (unreleased)
 ------------------
 
+- Use a class to mark that a menu item has children. (And remove the
+  hard coded greater than sign.)
+  [markvl]
+
 - Remove duplication from the menu templates by moving the complete
   <ul> structure to the menu_recurse template.
   [markvl]

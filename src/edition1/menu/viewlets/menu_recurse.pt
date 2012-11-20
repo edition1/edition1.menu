@@ -6,11 +6,12 @@
       <li tal:attributes="class python:'item-level-%d' % level"
           tal:define="node_children node/children">
         <a href=""
+           tal:define="curr_class python: (node.get('is_current') and 'current') or (node.get('is_parent') and 'parent') or '';
+                       the_class python: node_children and (curr_class + ' has-children') or curr_class;"
            tal:attributes="href node/url;
                            title node/description;
-                           class python: (node.get('is_current') and 'current') or (node.get('is_parent') and 'parent') or '';">
+                           class the_class;">
           <span tal:replace="node/title">Link</span>
-          <span tal:condition="node_children">&gt;</span>
         </a>
         <span tal:define="next_level python: level + 1"
               tal:condition="node_children"
