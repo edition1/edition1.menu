@@ -2,6 +2,7 @@ function resetSmallMenu() {
     // Reset the small menu so all items are 'collapsed'.
     jq('.small-menu .has-children').removeClass('children-visible')
                                    .addClass('children-hidden');
+    jq('.big-menu .children-hidden').removeClass('children-hidden');
     jq('.small-menu .has-children').unbind();
     jq('.small-menu .has-children').toggle(function(event) {
         event.preventDefault();
