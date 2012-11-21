@@ -2,6 +2,7 @@ function resetSmallMenu() {
     // Reset the small menu so all items are 'collapsed'.
     jq('.small-menu .has-children').removeClass('children-visible')
                                    .addClass('children-hidden');
+    jq('.small-menu .has-children').unbind();
     jq('.small-menu .has-children').toggle(function(event) {
         event.preventDefault();
         event.stopImmediatePropagation();
@@ -37,4 +38,10 @@ jq(window).resize(function() {
 
 jq(document).ready(function() {
     setMenuSize();
+    jq('.small-menu .tabtitle').addClass('children-hidden').toggle(function() {
+        jq(this).removeClass('children-hidden').addClass('children-visible');
+    }, function () {
+        jq(this).removeClass('children-visible').addClass('children-hidden');
+        resetSmallMenu();
+    });
 });
