@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-11-14 11:16+0000\n"
-"PO-Revision-Date: 2012-11-14 12:15+0100\n"
+"POT-Creation-Date: 2012-11-21 15:42+0000\n"
+"PO-Revision-Date: 2012-11-21 16:43+0100\n"
 "Last-Translator: Mark van Lent <mark.van.lent@edition1.nl>\n"
 "Language-Team: Edition1 <info@edition1.nl>\n"
 "MIME-Version: 1.0\n"
@@ -19,18 +19,27 @@ msgstr ""
 msgid "Menu settings"
 msgstr "Menu instellingen"
 
+#. Default: "If there are more than this number of items in the menu, always show the small version. The default value (0) disables this feature."
+#: ./interfaces.py:36
+msgid "help_max_items"
+msgstr "Wanneer er meer items in het menu zijn dan hier opgegeven is, dan wordt altijd de smalle versie getoond. De standaard waarde (0) zet deze optie uit."
+
 #. Default: "Configuration for the responsive menu."
 #: ./browser/controlpanel.py:11
 msgid "help_menu_settings"
 msgstr "Configuratie voor het responsive menu."
 
 #. Default: "If the width of the browser window size is below this value, the small version of the menu is shown. The default value (0) makes sure the wide menu is always shown."
-#: ./interfaces.py:13
+#: ./interfaces.py:14
 msgid "help_min_width"
 msgstr "Wanneer de breedte van de browser minder is dan de opgegeven waarde, wordt de smalle versie van het menu getoond. De standaardwaarde (0) zorgt ervoor dat het brede menu altijd getoond wordt."
 
+#. Default: "Maximal number if items in wide menu"
+#: ./interfaces.py:34
+msgid "label_max_items"
+msgstr "Maximaal aantal items in het brede menu"
+
 #. Default: "Minimal width (in px) for the wide menu"
-#: ./interfaces.py:11
+#: ./interfaces.py:12
 msgid "label_min_width"
 msgstr "Minimale breedte (in px) voor het brede menu"
-

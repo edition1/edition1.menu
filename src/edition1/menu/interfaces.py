@@ -29,3 +29,13 @@ class IMenuSettings(Interface):
                       "root folder."),
         default=0,
         required=False)
+
+    edition1_menu_max_items = schema.Int(
+        title=_(u'label_max_items',
+                default=u'Maximal number if items in wide menu'),
+        description=_(u'help_max_items',
+                      default=u'If there are more than this number of items '
+                              u'in the menu, always show the small version. '
+                              u'The default value (0) disables this feature.'),
+        default=0,
+        required=False)

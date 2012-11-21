@@ -4,6 +4,11 @@ Changelog
 0.1a2 (unreleased)
 ------------------
 
+- Add a configuration option to always use the small menu when there
+  are more than X menu items. (So we can prevent overflowing the menu
+  even on 'desktop' screens.)
+  [markvl]
+
 - Make the small version of the menu work: start with children
   collapsed (hidden) and expand (visible) when needed. First click
   expands, second click collapses.

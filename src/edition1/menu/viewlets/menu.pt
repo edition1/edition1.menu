@@ -2,7 +2,8 @@
               i18n:domain="plone">
   <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
   <div id="responsive-menu"
-       tal:attributes="data-min-width view/get_min_size">
+       tal:attributes="data-min-width view/get_min_size;
+                       data-force-small view/is_small_version_forced;">
     <span class="tabtitle">Menu</span>
     <span tal:define="menu_items view/menu_items"
           tal:condition="menu_items"

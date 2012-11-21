@@ -188,3 +188,21 @@ class MenuViewlet(GlobalSectionsViewlet):
         registry = getUtility(IRegistry)
         settings = registry.forInterface(IMenuSettings)
         return settings.edition1_menu_min_width
+
+    def _get_max_items(self):
+        """Return the max items for the wide version."""
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(IMenuSettings)
+        return settings.edition1_menu_max_items
+
+    def is_small_version_forced(self):
+        """Return if the javascript should force the small version.
+
+        Normally the JS determines whether to show the small or wide
+        or small version. By returning True here we can force that the
+        small version is always used.
+        """
+        max_items = self._get_max_items()
+        if max_items > 0 and len(self.menu_items) > max_items:
+            return True
+        return False

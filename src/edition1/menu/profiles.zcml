@@ -15,7 +15,7 @@
   <genericsetup:upgradeStep
       source="0001"
       destination="0002"
-      title="Add CSS file"
+      title="Upgrade to version 0002"
       profile="edition1.menu:default"
       handler=".upgradesteps.to0002"
       />

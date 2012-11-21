@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-11-14 11:16+0000\n"
+"POT-Creation-Date: 2012-11-21 15:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,18 +19,28 @@ msgstr ""
 msgid "Menu settings"
 msgstr ""
 
+#. Default: "If there are more than this number of items in the menu, always show the small version. The default value (0) disables this feature."
+#: ./interfaces.py:36
+msgid "help_max_items"
+msgstr ""
+
 #. Default: "Configuration for the responsive menu."
 #: ./browser/controlpanel.py:11
 msgid "help_menu_settings"
 msgstr ""
 
 #. Default: "If the width of the browser window size is below this value, the small version of the menu is shown. The default value (0) makes sure the wide menu is always shown."
-#: ./interfaces.py:13
+#: ./interfaces.py:14
 msgid "help_min_width"
 msgstr ""
 
+#. Default: "Maximal number if items in wide menu"
+#: ./interfaces.py:34
+msgid "label_max_items"
+msgstr ""
+
 #. Default: "Minimal width (in px) for the wide menu"
-#: ./interfaces.py:11
+#: ./interfaces.py:12
 msgid "label_min_width"
 msgstr ""
 
