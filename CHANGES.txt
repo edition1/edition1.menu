@@ -4,6 +4,11 @@ Changelog
 0.1a2 (unreleased)
 ------------------
 
+- Make the small version of the menu work: start with children
+  collapsed (hidden) and expand (visible) when needed. First click
+  expands, second click collapses.
+  [markvl]
+
 - Use a class to mark that a menu item has children. (And remove the
   hard coded greater than sign.)
   [markvl]
