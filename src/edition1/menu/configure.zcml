@@ -9,17 +9,10 @@
   <include package="plone.app.registry" />
 
   <include file="permissions.zcml" />
+  <include file="profiles.zcml" />
   <include package=".browser" />
   <include package=".viewlets" />
 
   <i18n:registerTranslations directory="locales" />
-
-  <genericsetup:registerProfile
-      name="default"
-      title="edition1.menu"
-      directory="profiles/default"
-      description="Installs the edition1.menu package"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
 
 </configure>

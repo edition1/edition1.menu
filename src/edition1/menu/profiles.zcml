@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="edition1.menu">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="edition1.menu"
+      directory="profiles/default"
+      description="Installs the edition1.menu package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <!-- Upgrade steps -->
+  <genericsetup:upgradeStep
+      source="0001"
+      destination="0002"
+      title="Add CSS file"
+      profile="edition1.menu:default"
+      handler=".upgradesteps.to0002"
+      />
+
+</configure>
