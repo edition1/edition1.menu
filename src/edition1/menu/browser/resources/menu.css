@@ -1,0 +1,7 @@
+.children-hidden + ul {
+    display: none;
+}
+
+.children-visible + ul {
+    display: block;
+}
