@@ -19,9 +19,6 @@ class MenuItems(CatalogNavigationTabs):
     """
 
     def _get_link_url(self, child, member):
-        if child.Type == 'Link':
-            # Handle SwordLinks differently.
-            return (get_id(child), child.getObject().getTargetUrl())
         linkremote = child.getRemoteUrl and not member == child.Creator
         if linkremote:
             return (get_id(child), child.getRemoteUrl)
