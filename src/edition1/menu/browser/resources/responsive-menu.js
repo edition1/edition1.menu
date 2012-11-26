@@ -14,13 +14,16 @@ function resetSmallMenu() {
         return true;
     });
 
-    // Open/close the small menu
-    jq('.small-menu .tabtitle').addClass('children-hidden').toggle(function() {
-        jq(this).removeClass('children-hidden').addClass('children-visible');
-    }, function () {
-        jq(this).removeClass('children-visible').addClass('children-hidden');
-        resetSmallMenu();
-    });
+    // Open/close of the small menu
+    jq('.small-menu .tabtitle')
+        .unbind()
+        .removeClass('children-visible')
+        .addClass('children-hidden')
+        .toggle(function() {
+            jq(this).removeClass('children-hidden').addClass('children-visible');
+        }, function () {
+            jq(this).removeClass('children-visible').addClass('children-hidden');
+        });
 }
 
 function setMenuSize() {

@@ -4,7 +4,10 @@ Changelog
 0.1a4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix the fix of the small menu. The small menu stopped working when
+  it was expanded and the windows was resized from small to big and
+  back again.
+  [markvl]
 
 
 0.1a3 (2012-11-26)
