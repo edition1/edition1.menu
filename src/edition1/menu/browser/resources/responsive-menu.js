@@ -13,6 +13,14 @@ function resetSmallMenu() {
         // Don't do anything, let the browser handle the click on the link.
         return true;
     });
+
+    // Open/close the small menu
+    jq('.small-menu .tabtitle').addClass('children-hidden').toggle(function() {
+        jq(this).removeClass('children-hidden').addClass('children-visible');
+    }, function () {
+        jq(this).removeClass('children-visible').addClass('children-hidden');
+        resetSmallMenu();
+    });
 }
 
 function setMenuSize() {
@@ -41,10 +49,4 @@ jq(window).resize(function() {
 
 jq(document).ready(function() {
     setMenuSize();
-    jq('.small-menu .tabtitle').addClass('children-hidden').toggle(function() {
-        jq(this).removeClass('children-hidden').addClass('children-visible');
-    }, function () {
-        jq(this).removeClass('children-visible').addClass('children-hidden');
-        resetSmallMenu();
-    });
 });

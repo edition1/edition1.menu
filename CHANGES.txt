@@ -4,7 +4,9 @@ Changelog
 0.1a3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Small fix where the small menu is expanded when the window is
+  resized from big to small.
+  [markvl]
 
 
 0.1a2 (2012-11-22)
