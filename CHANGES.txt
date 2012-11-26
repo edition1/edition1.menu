@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1a3 (unreleased)
+0.1a3 (2012-11-26)
 ------------------
 
 - Small fix where the small menu is expanded when the window is
