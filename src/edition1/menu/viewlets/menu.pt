@@ -9,4 +9,7 @@
           tal:condition="menu_items"
           tal:replace="structure python:view.recurse(level=1, children=menu_items)" />
   </div>
+  <script>
+    setMenuSize();
+  </script>
 </tal:sections>

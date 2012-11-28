@@ -49,7 +49,3 @@ function setMenuSize() {
 jq(window).resize(function() {
     setMenuSize();
 });
-
-jq(document).ready(function() {
-    setMenuSize();
-});
