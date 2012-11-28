@@ -4,6 +4,9 @@ Changelog
 0.1a4 (unreleased)
 ------------------
 
+- Load setMenuSize() in the template, instead of on document.ready.
+  Otherwise you will see the menu in the wrong layout before it is
+  styled correctly. [mirella]
 - Fix the fix of the small menu. The small menu stopped working when
   it was expanded and the windows was resized from small to big and
   back again.
