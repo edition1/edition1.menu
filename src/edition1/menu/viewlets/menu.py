@@ -50,7 +50,7 @@ class MenuItems(CatalogNavigationTabs):
 
         if navtree_properties.getProperty('enable_wf_state_filtering', False):
             query['review_state'] = navtree_properties.getProperty(
-                                                    'wf_states_to_show', [])
+                'wf_states_to_show', [])
 
         query['is_default_page'] = False
 
@@ -172,7 +172,7 @@ class MenuViewlet(GlobalSectionsViewlet):
     def update(self):
         context = aq_inner(self.context)
         menu_items_view = getMultiAdapter((context, self.request),
-                                           name='menu_items')
+                                          name='menu_items')
         self.menu_items = menu_items_view.get_menu_items()
         self.available = (len(self.menu_items)) > 0
         self.selected_tabs = self.selectedTabs(portal_tabs=self.menu_items)
