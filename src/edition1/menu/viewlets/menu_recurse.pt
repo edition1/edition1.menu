@@ -4,7 +4,7 @@
   <ul tal:attributes="class python:'menu-level-%d' % level">
     <tal:node repeat="node children">
       <li tal:attributes="class python:'item-level-%d' % level"
-          tal:define="node_children node/children">
+          tal:define="node_children node/children|nothing">
         <a href=""
            tal:define="curr_class python: (node.get('is_current') and 'current') or (node.get('is_parent') and 'parent') or '';
                        the_class python: node_children and (curr_class + ' has-children') or curr_class;"

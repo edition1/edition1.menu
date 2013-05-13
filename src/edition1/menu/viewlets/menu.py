@@ -127,6 +127,7 @@ class MenuItems(CatalogNavigationTabs):
         if actions is not None:
             for actionInfo in actions:
                 data = actionInfo.copy()
+                data['children'] = []
                 result.append(data)
 
         # check whether we only want actions
