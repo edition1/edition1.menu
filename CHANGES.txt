@@ -4,7 +4,9 @@ Changelog
 0.1a6 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix error when actions are in the menu (like the Home item) that
+  have no children.
+  [markvl]
 
 
 0.1a5 (2012-11-28)
