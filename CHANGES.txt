@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1a6 (unreleased)
+0.1a6 (2013-11-20)
 ------------------
 
 - Fix error when actions are in the menu (like the Home item) that
