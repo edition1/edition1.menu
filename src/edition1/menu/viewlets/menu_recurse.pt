@@ -3,11 +3,11 @@
             i18n:domain="plone">
   <ul tal:attributes="class python:'menu-level-%d' % level">
     <tal:node repeat="node children">
-      <li tal:attributes="class python:'item-level-%d' % level"
-          tal:define="node_children node/children|nothing">
+      <li tal:define="node_children node/children|nothing;
+                      curr_class python: (node.get('is_current') and 'current') or (node.get('is_parent') and 'parent') or '';
+                      the_class python: node_children and (curr_class + ' has-children') or curr_class;"
+          tal:attributes="class python:'item-level-%d %s' % (level, curr_class)">
         <a href=""
-           tal:define="curr_class python: (node.get('is_current') and 'current') or (node.get('is_parent') and 'parent') or '';
-                       the_class python: node_children and (curr_class + ' has-children') or curr_class;"
            tal:attributes="href node/url;
                            title node/description;
                            class the_class;">
