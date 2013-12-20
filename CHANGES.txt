@@ -4,7 +4,7 @@ Changelog
 0.1a7 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add 'parent' and 'current' classes to <li> tags of the menu. [maciekz]
 
 
 0.1a6 (2013-11-20)
